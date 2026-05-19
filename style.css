@@ -1,0 +1,1890 @@
+/* ===================================
+   ADVANCED PORTFOLIO UI DESIGN
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#020617;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ===================================
+   CUSTOM SCROLLBAR
+=================================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(cyan,#3b82f6);
+    border-radius:20px;
+}
+
+/* ===================================
+   BACKGROUND GLOW
+=================================== */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:rgba(0,255,255,0.08);
+    filter:blur(120px);
+    top:-200px;
+    left:-100px;
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:rgba(59,130,246,0.08);
+    filter:blur(120px);
+    bottom:-150px;
+    right:-100px;
+    z-index:-1;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+
+nav{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    position:fixed;
+    top:0;
+    z-index:1000;
+    background:rgba(2,6,23,0.6);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    font-size:32px;
+    font-weight:800;
+    color:cyan;
+    letter-spacing:2px;
+    text-shadow:0 0 15px cyan;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:35px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+    transition:0.3s;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    background:cyan;
+    left:0;
+    bottom:-6px;
+    transition:0.4s;
+}
+
+nav ul li a:hover{
+    color:cyan;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+nav{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 10%;
+
+    position:fixed;
+
+    top:0;
+
+    z-index:1000;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+    transition:0.4s;
+
+}
+/* ===================================
+   DARK LIGHT TOGGLE
+=================================== */
+
+.theme-toggle{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    cursor:pointer;
+
+    transition:0.4s;
+
+    color:white;
+
+    font-size:20px;
+
+}
+
+.theme-toggle:hover{
+
+    transform:rotate(180deg);
+
+    background:cyan;
+
+    color:black;
+
+    box-shadow:0 0 20px cyan;
+
+}
+
+/* ===================================
+   LIGHT MODE
+=================================== */
+
+body.light-mode{
+
+    background:#f8fafc;
+    color:#0f172a;
+
+}
+
+body.light-mode nav{
+
+    background:rgba(255,255,255,0.7);
+
+}
+
+body.light-mode .about-text,
+body.light-mode .skill-card,
+body.light-mode .project-card,
+body.light-mode .education-card,
+body.light-mode form input,
+body.light-mode form textarea{
+
+    background:rgba(255,255,255,0.8);
+
+    color:#0f172a;
+
+    border:1px solid rgba(0,0,0,0.08);
+
+}
+
+body.light-mode nav ul li a{
+
+    color:#0f172a;
+
+}
+
+body.light-mode .hero-text p,
+body.light-mode .project-card p,
+body.light-mode .education-card{
+
+    color:#334155;
+
+}
+
+body.light-mode footer{
+
+    background:#e2e8f0;
+    color:#0f172a;
+
+}
+/* ===================================
+   HERO SECTION
+=================================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:120px 10%;
+    gap:60px;
+}
+
+.hero-text{
+    flex:1;
+    animation:slideLeft 1.2s ease;
+}
+
+.hero-text h3{
+    font-size:30px;
+    color:cyan;
+    margin-bottom:10px;
+}
+
+.hero-text h1{
+    font-size:75px;
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero-role{
+    font-size:35px;
+    margin-bottom:25px;
+}
+
+.typing{
+    color:cyan;
+    font-weight:700;
+    text-shadow:0 0 12px cyan;
+}
+
+.typed-cursor{
+    color:cyan;
+    font-size:35px;
+}
+
+.hero-text p{
+    font-size:17px;
+    line-height:1.9;
+    color:#cbd5e1;
+    margin-bottom:35px;
+    max-width:650px;
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+.btns{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.4s;
+    position:relative;
+    overflow:hidden;
+}
+
+.btn-primary{
+
+    background:linear-gradient(
+    135deg,
+    cyan,
+    #3b82f6);
+
+    color:black;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.btn-primary::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    top:0;
+
+    left:-100%;
+
+    background:rgba(255,255,255,0.25);
+
+    transition:0.5s;
+
+}
+
+.btn-primary:hover::before{
+
+    left:100%;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 20px cyan,
+    0 0 40px rgba(0,255,255,0.3);
+
+}
+
+.btn-outline{
+    border:2px solid cyan;
+    color:cyan;
+}
+
+.btn-outline:hover{
+    background:cyan;
+    color:black;
+    box-shadow:0 0 25px cyan;
+}
+
+/* ===================================
+   SOCIAL ICONS
+=================================== */
+
+.social-icons{
+    margin-top:35px;
+}
+
+.social-icons a{
+    width:50px;
+    height:50px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:50%;
+    margin-right:15px;
+    color:white;
+    font-size:22px;
+    transition:0.4s;
+    backdrop-filter:blur(10px);
+}
+
+.social-icons a:hover{
+    background:cyan;
+    color:black;
+    transform:translateY(-8px) rotate(360deg);
+    box-shadow:0 0 25px cyan;
+}
+
+/* ===================================
+   HERO IMAGE
+=================================== */
+
+.hero-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    animation:slideRight 1.2s ease;
+}
+
+.hero-image img{
+    width:380px;
+    border-radius:50%;
+    border:6px solid cyan;
+    box-shadow:
+    0 0 30px cyan,
+    0 0 60px rgba(0,255,255,0.5);
+    animation:float 4s ease-in-out infinite;
+}
+
+/* ===================================
+   SECTION
+=================================== */
+
+section{
+    padding:110px 10%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:70px;
+    color:cyan;
+    position:relative;
+}
+
+.section-title::after{
+    content:'';
+    position:absolute;
+    width:120px;
+    height:4px;
+    background:linear-gradient(to right,cyan,#3b82f6);
+    left:50%;
+    transform:translateX(-50%);
+    bottom:-15px;
+    border-radius:10px;
+}
+
+/* ===================================
+   GLASS CARD DESIGN
+=================================== */
+
+.about-text,
+.skill-card,
+.project-card,
+.education-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+    border-radius:25px;
+    transition:0.5s;
+}
+
+.about-text:hover,
+.skill-card:hover,
+.project-card:hover,
+.education-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 0 35px rgba(0,255,255,0.18);
+}
+
+/* ===================================
+   ABOUT
+=================================== */
+
+.about-container{
+    display:flex;
+    justify-content:center;
+}
+
+.about-text{
+    padding:50px;
+    line-height:2;
+    font-size:17px;
+    color:#cbd5e1;
+}
+
+/* ===================================
+   SKILLS
+=================================== */
+
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+}
+
+.skill-card{
+    padding:40px;
+    text-align:center;
+}
+
+.skill-card i{
+    font-size:55px;
+    color:cyan;
+    margin-bottom:20px;
+}
+
+.skill-card h3{
+    font-size:24px;
+}
+
+.skill-card:hover{
+    background:linear-gradient(135deg,
+    rgba(0,255,255,0.1),
+    rgba(59,130,246,0.15));
+}
+
+/* ===================================
+   PROJECTS
+=================================== */
+
+.project-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:35px;
+}
+
+.project-card{
+    padding:35px;
+    position:relative;
+    overflow:hidden;
+}
+
+.project-card::before{
+    content:'';
+    position:absolute;
+    width:180px;
+    height:180px;
+    background:rgba(0,255,255,0.08);
+    border-radius:50%;
+    top:-60px;
+    right:-60px;
+}
+
+.project-icon{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.project-card h3{
+    color:cyan;
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.project-card p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.project-tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.project-tech span{
+    padding:10px 18px;
+    border-radius:30px;
+    background:rgba(0,255,255,0.1);
+    color:cyan;
+    font-size:14px;
+}
+
+.project-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.project-btn{
+    padding:12px 22px;
+    background:linear-gradient(135deg,cyan,#3b82f6);
+    color:black;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:600;
+    transition:0.4s;
+}
+
+.project-btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px cyan;
+}
+
+/* ===================================
+   EDUCATION
+=================================== */
+
+.education-card{
+    padding:50px;
+    line-height:2.2;
+    font-size:18px;
+    color:#cbd5e1;
+}
+
+/* ===================================
+   CONTACT
+=================================== */
+
+form{
+    max-width:750px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+form input,
+form textarea{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:18px;
+    border-radius:18px;
+    color:white;
+    font-size:16px;
+    outline:none;
+    backdrop-filter:blur(10px);
+}
+
+form textarea{
+    resize:none;
+    height:180px;
+}
+
+form input:focus,
+form textarea:focus{
+    border:1px solid cyan;
+    box-shadow:0 0 20px rgba(0,255,255,0.2);
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer{
+    text-align:center;
+    padding:35px;
+    background:#020617;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+/* ===================================
+   ANIMATIONS
+=================================== */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes slideLeft{
+
+    from{
+        opacity:0;
+        transform:translateX(-100px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+@keyframes slideRight{
+
+    from{
+        opacity:0;
+        transform:translateX(100px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+=================================== */
+
+@media(max-width:950px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    nav ul{
+        margin-top:20px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+    }
+
+    .hero-text h1{
+        font-size:52px;
+    }
+
+    .hero-role{
+        font-size:28px;
+    }
+
+    .btns{
+        justify-content:center;
+    }
+
+    .hero-image img{
+        width:280px;
+    }
+
+    .section-title{
+        font-size:38px;
+    }
+
+}
+/* ===================================
+   SMOOTH REVEAL ANIMATION
+=================================== */
+
+.reveal{
+
+    position:relative;
+
+    transform:translateY(80px);
+
+    opacity:0;
+
+    transition:all 1s ease;
+
+}
+
+.reveal.active{
+
+    transform:translateY(0);
+
+    opacity:1;
+
+}
+/* ===================================
+   HERO TEXT ANIMATION
+=================================== */
+
+.hero-text h1{
+
+    animation:glowText 3s infinite alternate;
+
+}
+
+@keyframes glowText{
+
+    from{
+
+        text-shadow:
+        0 0 10px cyan,
+        0 0 20px cyan;
+
+    }
+
+    to{
+
+        text-shadow:
+        0 0 20px #3b82f6,
+        0 0 40px #3b82f6;
+
+    }
+
+}
+/* ===================================
+   ADVANCED PROJECT CARD
+=================================== */
+
+.project-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:0.5s;
+
+}
+
+.project-card::after{
+
+    content:'';
+
+    position:absolute;
+
+    width:0%;
+
+    height:4px;
+
+    background:linear-gradient(
+    to right,
+    cyan,
+    #3b82f6);
+
+    bottom:0;
+
+    left:0;
+
+    transition:0.5s;
+
+}
+
+.project-card:hover::after{
+
+    width:100%;
+
+}
+
+.project-card:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.02);
+
+}
+/* ===================================
+   FLOATING CARD EFFECT
+=================================== */
+
+.skill-card,
+.project-card{
+
+    animation:floating 4s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+form input,
+form textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    border:none;
+
+    outline:none;
+
+    background:rgba(255,255,255,0.05);
+
+    color:white;
+
+    font-size:16px;
+
+    backdrop-filter:blur(10px);
+
+    transition:0.4s;
+
+}
+
+form input:focus,
+form textarea:focus{
+
+    border:1px solid cyan;
+
+    box-shadow:
+    0 0 20px rgba(0,255,255,0.25);
+
+    transform:scale(1.01);
+
+}
+/* ===================================
+   PAGE LOAD ANIMATION
+=================================== */
+
+body{
+
+    animation:pageLoad 1.2s ease;
+
+}
+
+@keyframes pageLoad{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.02);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+/* ===================================
+   CHATBOT
+=================================== */
+
+.chatbot-toggle{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    cyan,
+    #3b82f6);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    font-size:28px;
+
+    color:black;
+
+    box-shadow:
+    0 0 20px cyan;
+
+    animation:floatBot 3s infinite;
+
+}
+
+.chatbot-container{
+
+    position:fixed;
+
+    bottom:110px;
+
+    right:30px;
+
+    width:350px;
+
+    height:500px;
+
+    background:rgba(255,255,255,0.06);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    z-index:9999;
+
+    display:none;
+
+    flex-direction:column;
+
+    box-shadow:
+    0 0 40px rgba(0,255,255,0.15);
+
+}
+
+/* Header */
+
+.chatbot-header{
+
+    background:linear-gradient(
+    135deg,
+    cyan,
+    #3b82f6);
+
+    color:black;
+
+    padding:18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-weight:700;
+
+}
+
+#close-chat{
+
+    cursor:pointer;
+
+}
+
+/* Body */
+
+.chatbot-body{
+
+    flex:1;
+
+    padding:20px;
+
+    overflow-y:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+/* Messages */
+
+.bot-message,
+.user-message{
+
+    padding:14px 18px;
+
+    border-radius:18px;
+
+    max-width:80%;
+
+    line-height:1.6;
+
+}
+
+.bot-message{
+
+    background:rgba(0,255,255,0.12);
+
+    color:white;
+
+    align-self:flex-start;
+
+}
+
+.user-message{
+
+    background:#3b82f6;
+
+    color:white;
+
+    align-self:flex-end;
+
+}
+
+/* Footer */
+
+.chatbot-footer{
+
+    display:flex;
+
+    padding:15px;
+
+    gap:10px;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+
+}
+
+.chatbot-footer input{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+}
+
+.chatbot-footer button{
+
+    width:50px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:cyan;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+.chatbot-footer button:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* Floating Animation */
+
+@keyframes floatBot{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* Responsive */
+
+@media(max-width:480px){
+
+    .chatbot-container{
+
+        width:90%;
+
+        right:5%;
+
+        height:450px;
+
+    }
+
+}
+/* ===================================
+   CHAT TIME
+=================================== */
+
+.time{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:11px;
+
+    opacity:0.6;
+
+}
+
+/* ===================================
+   TYPING DOTS
+=================================== */
+
+.typing-dots{
+
+    display:flex;
+
+    gap:6px;
+
+    align-items:center;
+
+}
+
+.typing-dots span{
+
+    width:8px;
+
+    height:8px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:bounce 1s infinite;
+
+}
+
+.typing-dots span:nth-child(2){
+
+    animation-delay:0.2s;
+
+}
+
+.typing-dots span:nth-child(3){
+
+    animation-delay:0.4s;
+
+}
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translateY(0);
+
+        opacity:0.5;
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+        opacity:0.5;
+
+    }
+
+}
+
+/* ===================================
+   CHAT ANIMATION
+=================================== */
+
+.bot-message,
+.user-message{
+
+    animation:messagePop 0.4s ease;
+
+}
+
+@keyframes messagePop{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ===================================
+   PREMIUM AI CHATBOT UI
+=================================== */
+
+.chatbot-toggle{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+    135deg,
+    cyan,
+    #3b82f6,
+    #9333ea);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    color:white;
+
+    font-size:30px;
+
+    box-shadow:
+    0 0 20px cyan,
+    0 0 40px rgba(0,255,255,0.2);
+
+    animation:floatBot 4s ease-in-out infinite;
+
+    transition:0.4s;
+
+}
+
+.chatbot-toggle:hover{
+
+    transform:scale(1.1) rotate(10deg);
+
+}
+
+/* ===================================
+   CHAT CONTAINER
+=================================== */
+
+.chatbot-container{
+
+    position:fixed;
+
+    bottom:120px;
+
+    right:30px;
+
+    width:380px;
+
+    height:550px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,0.06);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 0 40px rgba(0,255,255,0.15);
+
+    display:none;
+
+    flex-direction:column;
+
+    z-index:9999;
+
+    animation:chatOpen 0.4s ease;
+
+}
+
+/* ===================================
+   CHAT HEADER
+=================================== */
+
+.chatbot-header{
+
+    padding:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:linear-gradient(
+    135deg,
+    cyan,
+    #3b82f6);
+
+    color:black;
+
+    font-weight:700;
+
+}
+
+.chatbot-header h3{
+
+    font-size:18px;
+
+}
+
+#close-chat{
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:0.3s;
+
+}
+
+#close-chat:hover{
+
+    transform:rotate(90deg);
+
+}
+
+/* ===================================
+   CHAT BODY
+=================================== */
+
+.chatbot-body{
+
+    flex:1;
+
+    padding:20px;
+
+    overflow-y:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    scroll-behavior:smooth;
+
+}
+
+/* ===================================
+   MESSAGES
+=================================== */
+
+.bot-message,
+.user-message{
+
+    padding:15px 18px;
+
+    border-radius:20px;
+
+    max-width:80%;
+
+    line-height:1.7;
+
+    position:relative;
+
+    animation:messageShow 0.4s ease;
+
+}
+
+.bot-message{
+
+    background:rgba(0,255,255,0.12);
+
+    color:white;
+
+    align-self:flex-start;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+}
+
+.user-message{
+
+    background:linear-gradient(
+    135deg,
+    #3b82f6,
+    #9333ea);
+
+    color:white;
+
+    align-self:flex-end;
+
+}
+
+/* ===================================
+   TIMESTAMP
+=================================== */
+
+.time{
+
+    display:block;
+
+    margin-top:8px;
+
+    font-size:11px;
+
+    opacity:0.65;
+
+}
+
+/* ===================================
+   CHAT FOOTER
+=================================== */
+
+.chatbot-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+
+}
+
+.chatbot-footer input{
+
+    flex:1;
+
+    padding:14px 18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.08);
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+.chatbot-footer button{
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+    135deg,
+    cyan,
+    #3b82f6);
+
+    cursor:pointer;
+
+    color:black;
+
+    font-size:18px;
+
+    transition:0.3s;
+
+}
+
+.chatbot-footer button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 20px cyan;
+
+}
+
+/* ===================================
+   THINKING DOTS
+=================================== */
+
+.typing-dots{
+
+    display:flex;
+
+    gap:6px;
+
+    align-items:center;
+
+}
+
+.typing-dots span{
+
+    width:8px;
+
+    height:8px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:bounce 1s infinite;
+
+}
+
+.typing-dots span:nth-child(2){
+
+    animation-delay:0.2s;
+
+}
+
+.typing-dots span:nth-child(3){
+
+    animation-delay:0.4s;
+
+}
+
+@keyframes bounce{
+
+    0%{
+
+        transform:translateY(0);
+
+        opacity:0.4;
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+        opacity:0.4;
+
+    }
+
+}
+
+/* ===================================
+   ANIMATIONS
+=================================== */
+
+@keyframes floatBot{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes messageShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes chatOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================
+   MOBILE RESPONSIVE
+=================================== */
+
+@media(max-width:480px){
+
+    .chatbot-container{
+
+        width:92%;
+
+        right:4%;
+
+        height:500px;
+
+    }
+
+}
+.hero-animation{
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+}
+
+.typing{
+    color: #e80404;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgb(255, 0, 0);
+}
+
+/* Blinking Cursor */
+
+.typed-cursor{
+    color: rgb(240, 3, 3);
+    font-size: 32px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
+/* Smooth Transition */
+
+body,
+nav,
+section,
+.project-card,
+.skill-card,
+.about-text,
+.education-card,
+.chat-box{
+    transition: 0.4s ease;
+}
+
+/* Theme Toggle Button */
+
+.theme-toggle{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:cyan;
+    color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:20px;
+    font-weight:bold;
+    margin-left:20px;
+}
+
+/* LIGHT MODE */
+
+body.light-mode{
+    background:#f8fafc;
+    color:#0f172a;
+}
+
+/* Navbar */
+
+body.light-mode nav{
+    background:rgba(255,255,255,0.8);
+}
+
+/* Cards */
+
+body.light-mode .project-card,
+body.light-mode .skill-card,
+body.light-mode .about-text,
+body.light-mode .education-card,
+body.light-mode .chat-box{
+    background:white;
+    color:#0f172a;
+}
+
+/* Text */
+
+body.light-mode p,
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode a{
+    color:#0f172a;
+}
+
+/* Inputs */
+
+body.light-mode input,
+body.light-mode textarea{
+    background:#e2e8f0;
+    color:black;
+}
+
+/* Chat Messages */
+
+body.light-mode .bot-message{
+    background:#e2e8f0;
+    color:black;
+}
+
+/* Footer */
+
+body.light-mode footer{
+    background:#cbd5e1;
+    color:black;
+}
